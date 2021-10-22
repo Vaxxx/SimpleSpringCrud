@@ -1,0 +1,63 @@
+<html xlmns:th="http://www.thymeleaf.org"> 
+   <head>
+      <title>Students</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">    
+   </head>
+   <body>
+   <div>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		  <!-- Brand -->
+		  <a class="navbar-brand" href="#">Student MS</a>
+		
+		  <!-- Toggler/collapsibe Button -->
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		
+		  <!-- Navbar links -->
+		  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+		    <ul class="navbar-nav">
+		      <li class="nav-item">
+		        <a class="nav-link" th:href="@{/students}">View Students</a>
+		      </li>
+		   
+		    </ul>
+		  </div>
+	</nav> 
+   </div>
+      <div class="container">          
+          <div class="row"> 
+             <div class="col-md-12">                
+                 <div class="flex">
+                    <h1>List Students</h1>
+                   <div class="float-right">
+                     <a th:href="@{/students/new}" class="btn btn-primary float-right">Add Student</a>
+                   </div>
+                 </div>
+              <table class="table table-striped">
+                  <thead class="">
+                  <tr>
+                     <th>First Name</th>
+                     <th>Last Name</th>
+                     <th>Email</th>
+                     <th>Actions</th>
+                  </tr> 
+                 </thead>
+                 <tbody>
+                     <tr th:each="student: ${students}">
+                         <td th:text="${student.firstName}"></td>
+                         <td th:text="${student.lastName}"></td>
+                         <td th:text="${student.email}"></td>
+                         <td> 
+                             <a th:href="@{/students/edit/{id}(id=${student.id})}"><i class="fa fa-edit">Update</i></a>
+                             <a class="btn btn-danger" th:href="@{/students/{id}(id=${student.id})}"><i class="fa fa-edit">Delete</i></a>  
+                         </td>
+                     </tr>
+                 </tbody>
+             </div>
+			 </table>
+          </div>
+      </div>
+   </body>
+</html>
