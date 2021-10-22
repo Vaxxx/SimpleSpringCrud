@@ -1,0 +1,66 @@
+<html xlmns:th="http://www.thymeleaf.org"> 
+   <head>
+      <title>Students</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <style>
+		footer {
+		   position: fixed;
+		   left: 0;
+		   bottom: 0;
+		   width: 100%; 
+		   color: white;
+		   text-align: center;
+		   margin: auto auto;
+		}
+</style>    
+   </head>
+   <body>
+   <div>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		  <!-- Brand -->
+		  <a class="navbar-brand" href="#">Student MS</a>
+		
+		  <!-- Toggler/collapsibe Button -->
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		
+		  <!-- Navbar links -->
+		  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+		    <ul class="navbar-nav">
+		      <li class="nav-item">
+		        <a class="nav-link" th:href="@{/students}">View Students</a>
+		      </li>
+		   
+		    </ul>
+		  </div>
+	</nav> 
+   </div>
+      <div class="container">          
+          <div class="row"> 
+             <div class="col-md-12">                
+                 
+               <div class="jumbotron bg-dark text-white my-4">
+				  <h1 class="display-4">CRUD SYSTEM</h1>
+				  <p class="lead">A simple Student CRUD System.</p>
+				  <hr class="my-4">
+				  <p>The system uses a MySQL Database. But with little configuration, you can use your preferred DBMS.</p>
+				  <p class="lead">
+				    <a class="btn btn-primary btn-lg" th:href="@{/students}" role="button">Start CRUD</a>
+				  </p>
+				</div>
+          </div>
+      </div>
+      
+      
+      <footer class="text-muted bg-dark mb-0">
+		  <div class="container">
+		    <p class="float-end mb-1"> 
+		    </p>
+		     
+		    <p class="text-center text-white">Copyright &nbsp; VAXWORLD!</p>
+		  </div>
+			</footer>
+   </body>
+</html>

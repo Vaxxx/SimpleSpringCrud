@@ -1,0 +1,68 @@
+<html xlmns:th="http://www.thymeleaf.org"> 
+   <head>
+      <title>Create Student</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    
+   </head>
+   <body>
+     <div>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		  <!-- Brand -->
+		  <a class="navbar-brand" href="#">Student MS</a>
+		
+		  <!-- Toggler/collapsibe Button -->
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		
+		  <!-- Navbar links -->
+		  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+		    <ul class="navbar-nav">
+		      <li class="nav-item">
+		        <a class="nav-link" th:href="@{/students}">View Students</a>
+		      </li>
+		   
+		    </ul>
+		  </div>
+	</nav> 
+   </div>
+      <div class="container">          
+          <div class="row"> 
+             <div class="col-md-12">                
+                  <h1 class="justify-center alert alert-success">Update Student</h1>
+                  <div class="card-body">
+                       <form th:action="@{/students/{id} (id=${student.id})}" th:object="${student}" method="POST">
+                           <div class="form-group">
+                               <label>First name</label>
+                               <input type="text"
+                                     name="firstName" 
+                                     th:field="*{firstName}" 
+                                     placeholder="First Name">
+                           </div>
+                           <div class="form-group">
+                               <label>Last name</label>
+                               <input type="text"
+                                     name="lastName" 
+                                     th:field="*{lastName}" 
+                                     placeholder="Last Name">
+                           </div>
+                           
+                           <div class="form-group">
+                               <label>Email Address</label>
+                               <input type="email"
+                                     name="email" 
+                                     th:field="*{email}" 
+                                     placeholder="Email Address">
+                           </div>
+                           
+                           <div class="footer-body">
+                              <button type="submit" class="btn btn-primary">
+                                 Submit
+                              </button>
+                           </div>
+                       </form>
+                  </div>
+          </div>
+      </div>
+   </body>
+</html>
